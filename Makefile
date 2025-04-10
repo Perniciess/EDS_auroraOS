@@ -2,14 +2,14 @@ CXX = g++
 CXXFLAGS = -Iinclude -Wall -Wextra -std=c++17
 
 
-SRCS = src/main.cpp src/EDS.cpp
+SRCS = src/main.cpp src/CryptoKeyManager.cpp
 OBJS = $(patsubst src/%.cpp, build/%.o, $(SRCS))
 
 
-TARGET = build/EDS  
+TARGET = build/CryptoKeyManager  
 
 
-TEST_DIR = test/test_files
+TEST_DIR = test_files
 
 
 all: build $(TARGET)
@@ -26,4 +26,3 @@ $(TARGET): $(OBJS)
 
 build/%.o: src/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
-
